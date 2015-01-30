@@ -15,8 +15,7 @@ This collection contains various C++ codes for the following:
 -	Prime Numbers Generation
 -	Prime Numbers Generation (Reverse)
 -	Emirp Number Test (http://en.wikipedia.org/wiki/Emirp)
--	Prime Factors
--	And, so on...
+-	Prime Factors ...
 
 Any suggestions to improve or enhance these codes are always welcome.
 
