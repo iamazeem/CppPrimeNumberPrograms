@@ -30,9 +30,8 @@ int main(void)
 			if( number % i == 0 )
                 isPrime = false;
 		}
-		
-		if( isPrime )
-            cout << number << " ";
+		    if( isPrime )
+                cout << number << " ";
 	}
 	return 0;
 }
