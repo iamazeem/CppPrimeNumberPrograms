@@ -1,7 +1,6 @@
 # C++ Prime Number Programs by AZEEM
 
-What is a prime number?
- http://en.wikipedia.org/wiki/Prime_number
+What is a prime number? http://en.wikipedia.org/wiki/Prime_number
 
 The following facts are good to know before writing prime numbers' programs:
 
@@ -25,10 +24,13 @@ Any suggestions to improve or enhance these codes are always welcome.
 ### References
 
 **Wikipedia: Prime Number**
- http://en.wikipedia.org/wiki/Prime_number
+
+http://en.wikipedia.org/wiki/Prime_number
 
 **Wikipedia: Emirp Number**
- http://en.wikipedia.org/wiki/Emirp
+
+http://en.wikipedia.org/wiki/Emirp
 
 **CPP Reference for sqrt() function**
- http://en.cppreference.com/w/cpp/numeric/math/sqrt
+
+http://en.cppreference.com/w/cpp/numeric/math/sqrt
