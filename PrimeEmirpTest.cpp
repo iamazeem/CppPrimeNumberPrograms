@@ -26,7 +26,7 @@ int main(void)
 
 	if( isPrime )
 	{
-		cout << number << " is a PRIME." << endl;
+		cout << number << " is a PRIME Number." << endl;
 		for( unsigned int n = number; n > 0; n /= 10 )
 		{
 			reverse = reverse * 10 + n % 10;
@@ -45,7 +45,7 @@ int main(void)
 	}
 	else
 	{
-		cout << number << " is NOT a PRIME." << endl;
+		cout << number << " is NOT a PRIME Number." << endl;
 	}
 	return 0;
 }
