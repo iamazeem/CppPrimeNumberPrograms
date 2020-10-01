@@ -1,0 +1,24 @@
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int num,div;
+    cin>>num;
+    for(int i=0;i<num;i++)
+    {
+        cin>>div;
+        if(div==1)
+            continue;
+        else if(div==2 || div==3 || div==5 || div==7)
+            cout<<div<<" ";
+        else if(div%2!=0 && div%3!=0 && div%5!=0 && div%7!=0)
+            cout<<div<<" ";
+                    
+    }
+    return 0;
+}
+    
+ 
