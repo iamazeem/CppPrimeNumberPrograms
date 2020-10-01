@@ -1,33 +1,35 @@
-// Program: C++ Prime Factors
-// GitHub : https://github.com/iamAzeem/CppPrimeNumberPrograms
+#include <iostream>
+#include <cstdlib>
 
-// Author : AZEEM
-// GitHub : https://github.com/iamAzeem
-// Facebk : https://www.facebook.com/az33msajid
+void printPrimeFactors(std::size_t number);
 
-#include<iostream>
-using namespace std;
-
-void printPrimeFactors( unsigned int number );
-
-int main(void)
+int main()
 {
-	printPrimeFactors( 14 );
-	return 0;
+    std::size_t number = 0;
+    std::cout << "Enter a number: ";
+    std::cin >> number;
+
+    printPrimeFactors(number);
+
+    return EXIT_SUCCESS;
 }
 
-void printPrimeFactors( unsigned int number )
+void printPrimeFactors(std::size_t number)
 {
-	unsigned int i = 2;
-	while( number > 1 )
-	{
-		if( number % i == 0 )
-		{
-			cout << i << " ";
-			number /= i;
-			i = 2;
-		}
-		else
-			i++;
-	}
+    std::cout << "The prime factors of " << number << " are:\n";
+
+    std::size_t i = 2;
+    while (number > 1)
+    {
+        if (number % i == 0)
+        {
+            std::cout << i << " ";
+            number /= i;
+            i = 2;
+        }
+        else
+        {
+            i++;
+        }
+    }
 }

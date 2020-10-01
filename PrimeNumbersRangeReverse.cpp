@@ -1,39 +1,47 @@
-// Program: C++ Prime Numbers Range Reverse
-// GitHub : https://github.com/iamAzeem/CppPrimeNumberPrograms
-
-// Author : AZEEM
-// GitHub : https://github.com/iamAzeem
-// Facebk : https://www.facebook.com/az33msajid
-
 #include <iostream>
 #include <cmath>
-using namespace std;
+#include <cstdlib>
 
-int main(void)
+int main()
 {
-	unsigned int primeRange = 0;
-	cout << "Enter prime limit: ";
-	cin  >> primeRange;
+    std::size_t primeRange = 0;
+    std::cout << "Enter prime limit: ";
+    std::cin >> primeRange;
 
-	if( primeRange % 2 == 0 ) --primeRange;   // if even, make it odd...
-	
-	while( primeRange >= 2 )
-	{
-		bool isPrime = true;
-		const double squareRoot = sqrt( primeRange );
+    // if even, make it odd
+    if (primeRange % 2 == 0)
+    {
+        --primeRange;
+    }
 
-		for( unsigned int i = 2 ; i <= squareRoot; i++ )
-		{
-			if( primeRange % i == 0 )
-			{
-				isPrime = false;
-				break;
-			}
-		}
+    while (primeRange >= 2)
+    {
+        bool isPrime = true;
+        const double squareRoot = sqrt(primeRange);
 
-		if( isPrime ) cout << primeRange << " ";
+        for (std::size_t i = 2; i <= squareRoot; ++i)
+        {
+            if (primeRange % i == 0)
+            {
+                isPrime = false;
+                break;
+            }
+        }
 
-		( primeRange > 3 ) ? primeRange -= 2 : --primeRange;
-	}
-	return 0;
+        if (isPrime)
+        {
+            std::cout << primeRange << " ";
+        }
+
+        if (primeRange > 3)
+        {
+            primeRange -= 2;
+        }
+        else
+        {
+            primeRange -= 1;
+        }
+    }
+
+    return EXIT_SUCCESS;
 }

@@ -1,65 +1,65 @@
-// Program: C++ Prime Emirp Number Test with Functions
-// GitHub : https://github.com/iamAzeem/CppPrimeNumberPrograms
-
-// Author : AZEEM
-// GitHub : https://github.com/iamAzeem
-// Facebk : https://www.facebook.com/az33msajid
-
 #include <iostream>
 #include <cmath>
-using namespace std;
+#include <cstdlib>
 
-bool isPrime( unsigned int number );
-bool isEmirp( unsigned int number );
-int  reverse( unsigned int number );
+bool isPrime(const std::size_t number);
+bool isEmirp(const std::size_t number);
+std::size_t reverseNumber(std::size_t number);
 
-int main(void)
+int main()
 {
-	unsigned int number = 0;
-	cout << "Enter a number: ";
-	cin  >> number;
+    std::size_t number = 0;
+    std::cout << "Enter a number: ";
+    std::cin >> number;
 
-	if( isPrime( number ) )
-	{
-		cout << number << " is a PRIME." << endl;
-		
-		if( isEmirp(number) )
-			cout << number << " is also an EMIRP." << endl;
-		else
-			cout << number << " is NOT an EMIRP." << endl;    
-	}
-	else
-	{
-		cout << number << " is NOT a PRIME." << endl;
-	}
-	return 0;
+    if (isPrime(number))
+    {
+        std::cout << number << " is NOT a PRIME number.\n";
+        return EXIT_SUCCESS;
+    }
+
+    std::cout << number << " is a PRIME number.\n";
+
+    if (isEmirp(number))
+    {
+        std::cout << number << " is also an EMIRP number.\n";
+    }
+    else
+    {
+        std::cout << number << " is NOT an EMIRP number.\n";
+    }
+
+    return EXIT_SUCCESS;
 }
 
-bool isPrime( unsigned int number )
+bool isPrime(const std::size_t number)
 {
-	const double squareRoot = sqrt( number );
-	for( unsigned int i = 2; i <= squareRoot; i++ )
-	{
-		if( number % i == 0 ) return false;
-	}
-	return true;
+    const double squareRoot = sqrt(number);
+    for (std::size_t i = 2; i <= squareRoot; ++i)
+    {
+        if (number % i == 0)
+        {
+            return false;
+        }
+    }
+
+    return true;
 }
 
-bool isEmirp( unsigned int number )
+bool isEmirp(const std::size_t number)
 {
-	unsigned int reversedNumber = reverse( number );
-	return isPrime( reversedNumber );
+    const std::size_t reversedNumber = reverseNumber(number);
+    return isPrime(reversedNumber);
 }
 
-int  reverse( unsigned int number )
+std::size_t reverseNumber(std::size_t number)
 {
-	int reversedNumber = 0;
-	while( number > 0 )
-	{
-		reversedNumber = reversedNumber * 10 + number % 10;
-		number /= 10;
-	}
-	return reversedNumber;
-}
+    std::size_t reversedNumber = 0;
+    while (number > 0)
+    {
+        reversedNumber = (reversedNumber * 10) + (number % 10);
+        number /= 10;
+    }
 
-/*----------------------------------------------------------------------------*/
+    return reversedNumber;
+}

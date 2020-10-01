@@ -1,38 +1,35 @@
-// Program: C++ Prime Number Test with Loop
-// GitHub : https://github.com/iamAzeem/CppPrimeNumberPrograms
-
-// Author : AZEEM
-// GitHub : https://github.com/iamAzeem
-// Facebk : https://www.facebook.com/az33msajid
-
 #include <iostream>
 #include <cmath>
-using namespace std;
+#include <cstdlib>
 
-int main(void)
+int main()
 {
-	unsigned int number = 0;
-	bool isPrime = true;
 
-	cout << "Enter a number: ";
-	cin  >> number;
+    std::size_t number = 0;
+    std::cout << "Enter a number: ";
+    std::cin >> number;
 
-	const double squareRoot = sqrt( number );
-	for( unsigned int i = 2; i <= squareRoot; i++ )
-	{
-		if( number % i == 0 )
-		{
-			isPrime = false;
-			break;
-		}
-	}
+    bool isPrime = true;
+    const double squareRoot = sqrt(number);
+    for (std::size_t i = 2; i <= squareRoot; ++i)
+    {
+        if (number % i == 0)
+        {
+            isPrime = false;
+            break;
+        }
+    }
 
-	if( isPrime )
-		cout << number << " is prime." << endl;
-	else
-		cout << number << " is NOT prime." << endl;
+    if (isPrime)
+    {
+        std::cout << number << " is a PRIME number.\n";
+    }
+    else
+    {
+        std::cout << number << " is NOT a PRIME number.\n";
+    }
 
-	//cout << ( isPrime ? " is prime." : " is NOT prime." ) << endl;
-	
-	return 0;
+    // std::cout << number << (isPrime ? " is" : " is NOT") << " a PRIME number.\n";
+
+    return EXIT_SUCCESS;
 }

@@ -1,51 +1,63 @@
-// Program: C++ Prime Emirp Number Test
-// GitHub : https://github.com/iamAzeem/CppPrimeNumberPrograms
-
-// Author : AZEEM
-// GitHub : https://github.com/iamAzeem
-// Facebk : https://www.facebook.com/az33msajid
-
 #include <iostream>
 #include <cmath>
-using namespace std;
+#include <cstdlib>
 
-int main(void)
+int main()
 {
-	unsigned int number = 0, reverse = 0;
-	bool isPrime = true, isEmirp = true;
-	double squareRoot = 0.0;
+    std::size_t number = 0;
+    std::cout << "Enter a number: ";
+    std::cin >> number;
 
-	cout << "Enter a number: ";
-	cin  >> number;
+    // check if number is prime
 
-	squareRoot = sqrt( number );
-	for( unsigned int i = 2; i <= squareRoot; i++ )
-	{
-		if( number % i == 0 ) isPrime = false;
-	}
+    bool isPrime = true;
+    double squareRoot = sqrt(number);
+    for (std::size_t i = 2; i <= squareRoot; ++i)
+    {
+        if (number % i == 0)
+        {
+            isPrime = false;
+            break;
+        }
+    }
 
-	if( isPrime )
-	{
-		cout << number << " is a PRIME Number." << endl;
-		for( unsigned int n = number; n > 0; n /= 10 )
-		{
-			reverse = reverse * 10 + n % 10;
-		}
+    if (!isPrime)
+    {
+        std::cout << number << " is NOT a PRIME number.\n";
+        return EXIT_SUCCESS;
+    }
 
-		squareRoot = sqrt( reverse );
-		for( unsigned int i = 2; i <= squareRoot; i++ )
-		{
-			if( reverse % i == 0 ) isEmirp = false;
-		}
+    std::cout << number << " is a PRIME number.\n";
 
-		if( isEmirp )
-			cout << reverse << " is also an EMIRP." << endl;
-		else
-			cout << reverse << " is NOT an EMIRP." << endl;
-	}
-	else
-	{
-		cout << number << " is NOT a PRIME Number." << endl;
-	}
-	return 0;
+    // if number is prime, reverse it and proceed with emirp test
+
+    std::size_t reversedNumber = 0;
+    for (std::size_t n = number; n > 0; n /= 10)
+    {
+        reversedNumber = (reversedNumber * 10) + (n % 10);
+    }
+
+    // check if the reversed number is an emirp number
+
+    bool isEmirp = true;
+    squareRoot = sqrt(reversedNumber);
+    for (std::size_t i = 2; i <= squareRoot; ++i)
+    {
+        if (reversedNumber % i == 0)
+        {
+            isEmirp = false;
+            break;
+        }
+    }
+
+    if (isEmirp)
+    {
+        std::cout << reversedNumber << " is also an EMIRP number.\n";
+    }
+    else
+    {
+        std::cout << reversedNumber << " is NOT an EMIRP number.\n";
+    }
+
+    return EXIT_SUCCESS;
 }

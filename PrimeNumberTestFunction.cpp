@@ -1,38 +1,39 @@
-// Program: C++ Prime Number Test with Function
-// GitHub : https://github.com/iamAzeem/CppPrimeNumberPrograms
-
-// Author : AZEEM
-// GitHub : https://github.com/iamAzeem
-// Facebk : https://www.facebook.com/az33msajid
-
 #include <iostream>
 #include <cmath>
-using namespace std;
+#include <cstdlib>
 
-bool isPrime( unsigned int number );
+bool isPrime(const std::size_t number);
 
-int main(void)
+int main()
 {
-	unsigned int number = 0;
-	cout << "Enter a number: ";
-	cin  >> number;
+    std::size_t number = 0;
+    std::cout << "Enter a number: ";
+    std::cin >> number;
 
-	if( isPrime( number ) )
-		cout << number << " is prime." << endl;
-	else
-		cout << number << " is NOT prime." << endl;
+    if (isPrime(number))
+    {
+        std::cout << number << " is a PRIME number.\n";
+    }
+    else
+    {
+        std::cout << number << " is NOT a PRIME number.\n";
+    }
 
-	//cout << ( isPrime(number) ? " is prime." : " is NOT prime." ) << endl;
+    // std::cout << number << (isPrime(number) ? " is" : " is NOT") << " a PRIME number.\n";
 
-	return 0;
+    return EXIT_SUCCESS;
 }
 
-bool isPrime( unsigned int number )
+bool isPrime(const std::size_t number)
 {
-	const double squareRoot = sqrt( number );
-	for( int i = 2; i <= squareRoot; i++ )
-	{
-		if( number % i == 0 ) return false;
-	}
-	return true;
+    const double squareRoot = sqrt(number);
+    for (std::size_t i = 2; i <= squareRoot; ++i)
+    {
+        if (number % i == 0)
+        {
+            return false;
+        }
+    }
+
+    return true;
 }
